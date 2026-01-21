@@ -41,10 +41,13 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
 
+  gem 'rspec', '~> 3.4'
+
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem 'brakeman', require: false
 
   gem 'rubocop', '~> 1.82', require: false
   gem 'rubocop-performance', '~> 1.26', require: false
   gem 'rubocop-rails', '~> 2.33', require: false
+  gem 'rubocop-rspec', '~> 3.8', require: false
 end
