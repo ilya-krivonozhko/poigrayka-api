@@ -51,3 +51,7 @@ group :development, :test do
   gem 'rubocop-rails', '~> 2.33', require: false
   gem 'rubocop-rspec', '~> 3.8', require: false
 end
+
+group :development do
+  gem 'overcommit', '~> 0.67.1', require: false
+end
