@@ -6,8 +6,7 @@
 ![Rails](https://img.shields.io/badge/Rails-8.x-red)
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue)
 ![License](https://img.shields.io/badge/License-Proprietary-lightgrey)
-
-## 🇷🇺 Описание (Russian)
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 
 **Poigrayka API** — это RESTful backend для интернет-магазина настольных игр Poigrayka, разработанный на Ruby on Rails в API-режиме.
 

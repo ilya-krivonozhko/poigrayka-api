@@ -256,10 +256,6 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.44.0, < 2.0)
-    rubocop-rails-omakase (1.1.0)
-      rubocop (>= 1.72)
-      rubocop-performance (>= 1.24)
-      rubocop-rails (>= 2.30)
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
     solid_cable (3.0.12)
@@ -323,7 +319,9 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 8.0.4)
-  rubocop-rails-omakase
+  rubocop (~> 1.82)
+  rubocop-performance (~> 1.26)
+  rubocop-rails (~> 2.33)
   solid_cable
   solid_cache
   solid_queue
