@@ -8,3 +8,9 @@ AllCops:
   
 Style/Documentation:
   Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 10
+
+RSpec/ExampleLength:
+  Max: 15

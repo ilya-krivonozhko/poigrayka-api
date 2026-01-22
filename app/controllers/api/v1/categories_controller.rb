@@ -7,7 +7,7 @@ module Api
 
       def index
         categories = Category.all
-        render json: CategoryBlueprint.render(categories), status: ok
+        render json: CategoryBlueprint.render(categories), status: :ok
       end
 
       def show
