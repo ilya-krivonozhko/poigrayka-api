@@ -7,29 +7,21 @@ module Api
 
       def index
         categories = Category.all
-        render json: categories.as_json(
-          only: %i[id title created_at updated_at]
-        ), status: :ok
+        render json: CategoryBlueprint.render(categories), status: ok
       end
 
       def show
-        render json: @category.as_json(
-          only: %i[id title created_at updated_at]
-        ), status: :ok
+        render json: CategoryBlueprint.render(@category), status: :ok
       end
 
       def create
         category = Category.create!(category_params)
-        render json: category.as_json(
-          only: %i[id title created_at updated_at]
-        ), status: :created
+        render json: CategoryBlueprint.render(category), status: :created
       end
 
       def update
         @category.update!(category_params)
-        render json: @category.as_json(
-          only: %i[id title created_at updated_at]
-        ), status: :ok
+        render json: CategoryBlueprint.render(@category), status: :ok
       end
 
       def destroy

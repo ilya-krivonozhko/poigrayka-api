@@ -77,6 +77,7 @@ GEM
     bcrypt_pbkdf (1.1.2)
     benchmark (0.5.0)
     bigdecimal (4.0.1)
+    blueprinter (0.25.3)
     bootsnap (1.21.1)
       msgpack (~> 1.2)
     brakeman (7.1.2)
@@ -345,6 +346,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  blueprinter (~> 0.25.3)
   bootsnap
   brakeman
   debug
