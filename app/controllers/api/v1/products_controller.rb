@@ -32,7 +32,7 @@ module Api
       private
 
       def set_product
-        @product = Product.find_by(id: params[:id])
+        @product = Product.find(params[:id])
       end
 
       def product_params # rubocop:disable Metrics/MethodLength
