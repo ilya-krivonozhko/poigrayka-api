@@ -48,7 +48,7 @@ group :development, :test do
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem 'brakeman', require: false
 
-  gem 'rubocop', '~> 1.82', require: false
+  gem 'rubocop', '~> 1.84', require: false
   gem 'rubocop-performance', '~> 1.26', require: false
   gem 'rubocop-rails', '~> 2.33', require: false
   gem 'rubocop-rspec', '~> 3.8', require: false
