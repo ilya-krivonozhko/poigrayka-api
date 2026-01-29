@@ -44,6 +44,7 @@ class Product < ApplicationRecord
   def valid_players_range
     return unless min_players.present? && max_players.present? && min_players > max_players
 
+    # TODO(i18n): add translation
     errors.add(:min_players, 'не может быть больше чем максимальное количество игроков')
   end
 end

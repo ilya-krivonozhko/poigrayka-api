@@ -31,6 +31,7 @@ RSpec.describe Product, type: :model do
     it 'is invalid without a title' do
       product = described_class.new(valid_attributes.merge(title: nil))
       expect(product).not_to be_valid
+      # TODO(i18n): add translation
       expect(product.errors[:title]).to include("can't be blank")
     end
 
@@ -48,6 +49,7 @@ RSpec.describe Product, type: :model do
       %i[description short_description rules contents].each do |field|
         product = described_class.new(valid_attributes.merge(field => nil))
         expect(product).not_to be_valid
+        # TODO(i18n): add translation
         expect(product.errors[field]).to include("can't be blank")
       end
     end
@@ -114,6 +116,7 @@ RSpec.describe Product, type: :model do
         valid_attributes.merge(min_players: 5, max_players: 2)
       )
       expect(product).not_to be_valid
+      # TODO(i18n): add translation
       expect(product.errors[:min_players]).to include(
         'не может быть больше чем максимальное количество игроков'
       )

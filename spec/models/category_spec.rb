@@ -14,6 +14,7 @@ RSpec.describe Category, type: :model do
     it 'is invalid without a title' do
       category = described_class.new(title: nil)
       expect(category).not_to be_valid
+      # TODO(i18n): add translation
       expect(category.errors[:title]).to include("can't be blank")
     end
 
@@ -21,6 +22,7 @@ RSpec.describe Category, type: :model do
       described_class.create!(title: 'Стратегии')
       duplicate = described_class.new(title: 'стратегии')
       expect(duplicate).not_to be_valid
+      # TODO(i18n): add translation
       expect(duplicate.errors[:title]).to include('has already been taken')
     end
 
@@ -28,6 +30,7 @@ RSpec.describe Category, type: :model do
       long_title = 'a' * 51
       category = described_class.new(title: long_title)
       expect(category).not_to be_valid
+      # TODO(i18n): add translation
       expect(category.errors[:title]).to include('is too long (maximum is 50 characters)')
     end
 
