@@ -34,10 +34,10 @@ This is a pet project for evaluation and demonstration purposes.
 
 The API is documented using **OpenAPI 3.0**.
 
-- [**OpenAPI spec (JSON)**](
-  https://raw.githubusercontent.com/ilya-krivonozhko/poigrayka-api/main/docs/openapi.json)
+- [**OpenAPI spec (YAML)**](
+  https://raw.githubusercontent.com/ilya-krivonozhko/poigrayka-api/main/docs/openapi.yaml)
 - [**Swagger Editor (interactive)**](
-  https://editor.swagger.io/?url=https://raw.githubusercontent.com/ilya-krivonozhko/poigrayka-api/main/docs/openapi.json)
+  https://editor.swagger.io/?url=https://raw.githubusercontent.com/ilya-krivonozhko/poigrayka-api/main/docs/openapi.yaml)
 
 ---
 
