@@ -14,6 +14,19 @@ paths:
       security: []
       tags:
         - Categories
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+          description: Номер страницы (или `all` для отключения пагинации)
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 9
       responses:
         '200':
           description: Список объектов
@@ -179,16 +192,18 @@ paths:
         '500':
           $ref: '#/components/responses/InternalServerError'
       parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+          description: Номер страницы (или `all` для отключения пагинации)
         - name: limit
           in: query
           schema:
             type: integer
-            default: 10
-        - name: offset
-          in: query
-          schema:
-            type: integer
-            default: 0
+            minimum: 1
+            default: 9
         - name: category_id
           in: query
           schema:

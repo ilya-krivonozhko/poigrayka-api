@@ -3,10 +3,12 @@
 module Api
   module V1
     class CategoriesController < ApplicationController
+      include Api::Paginatable
+
       before_action :set_category, only: %i[show update destroy]
 
       def index
-        categories = Category.all
+        _pagy, categories = paginate Category.all
         render json: CategoryBlueprint.render(categories), status: :ok
       end
 

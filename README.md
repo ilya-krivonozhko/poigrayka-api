@@ -64,13 +64,14 @@ The API is documented using **OpenAPI 3.0**.
 ---
 
 ## 📦 API Versioning
+
 The API is versioned using a URL namespace:
 
 `/api/v1/...`
 
 ---
 
-## ⚙️ Технологический стек / Tech Stack
+## ⚙️ Tech Stack / Технологический стек
 
 - Ruby 3.x
 - Ruby on Rails 8.x (API-only)
@@ -82,7 +83,7 @@ The API is versioned using a URL namespace:
 
 ---
 
-## 📄 License
+## 📄 License / Лицензия
 
 This project is proprietary and published for demonstration purposes only.
 See the [LICENSE](LICENSE) file for details.
