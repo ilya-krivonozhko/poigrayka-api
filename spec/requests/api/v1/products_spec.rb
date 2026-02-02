@@ -29,8 +29,9 @@ RSpec.describe 'Api::V1::Products', type: :request do
       expect(response).to have_http_status(:ok)
 
       json = response.parsed_body
-      expect(json).to be_an(Array)
-      expect(json.first).to include(
+      expect(json).to include('data', 'meta')
+      expect(json['data']).to be_an(Array)
+      expect(json['data'].first).to include(
         'id' => product.id,
         'title' => product.title,
         'short_description' => product.short_description

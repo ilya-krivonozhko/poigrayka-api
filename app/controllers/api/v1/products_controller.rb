@@ -8,22 +8,25 @@ module Api
       before_action :set_product, only: %i[show update destroy]
 
       def index
-        _pagy, products = paginate Product.all
-        render json: ProductBlueprint.render(products, view: :normal), status: :ok
+        pagy, products = paginate Product.all
+        render json: {
+          data: ProductBlueprint.render_as_hash(products, view: :normal),
+          meta: pagy&.data_hash
+        }, status: :ok
       end
 
       def show
-        render json: ProductBlueprint.render(@product, view: :extended), status: :ok
+        render json: ProductBlueprint.render_as_hash(@product, view: :extended), status: :ok
       end
 
       def create
         @product = Product.create!(product_params)
-        render json: ProductBlueprint.render(@product, view: :extended), status: :created
+        render json: ProductBlueprint.render_as_hash(@product, view: :extended), status: :created
       end
 
       def update
         @product.update!(product_params)
-        render json: ProductBlueprint.render(@product, view: :extended), status: :ok
+        render json: ProductBlueprint.render_as_hash(@product, view: :extended), status: :ok
       end
 
       def destroy

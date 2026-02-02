@@ -8,22 +8,25 @@ module Api
       before_action :set_category, only: %i[show update destroy]
 
       def index
-        _pagy, categories = paginate Category.all
-        render json: CategoryBlueprint.render(categories), status: :ok
+        pagy, categories = paginate Category.all
+        render json: {
+          data: CategoryBlueprint.render_as_hash(categories),
+          meta: pagy&.data_hash
+        }, status: :ok
       end
 
       def show
-        render json: CategoryBlueprint.render(@category), status: :ok
+        render json: CategoryBlueprint.render_as_hash(@category), status: :ok
       end
 
       def create
         category = Category.create!(category_params)
-        render json: CategoryBlueprint.render(category), status: :created
+        render json: CategoryBlueprint.render_as_hash(category), status: :created
       end
 
       def update
         @category.update!(category_params)
-        render json: CategoryBlueprint.render(@category), status: :ok
+        render json: CategoryBlueprint.render_as_hash(@category), status: :ok
       end
 
       def destroy
