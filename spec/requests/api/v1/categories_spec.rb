@@ -13,10 +13,18 @@ RSpec.describe 'Api::V1::Categories', type: :request do
       json = response.parsed_body
       expect(json).to include('data', 'meta')
       expect(json['data']).to be_an(Array)
-      expect(json['data'].first).to include(
-        'id' => category.id,
-        'title' => category.title
+      expect(json['data']).to include(
+        a_hash_including(
+          'id' => category.id,
+          'title' => category.title
+        )
       )
+    end
+
+    it 'supports pagination params' do
+      get '/api/v1/categories', params: { limit: 5 }
+
+      expect(response.parsed_body['meta']).to include('limit' => 5)
     end
   end
 

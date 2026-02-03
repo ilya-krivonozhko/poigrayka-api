@@ -31,11 +31,19 @@ RSpec.describe 'Api::V1::Products', type: :request do
       json = response.parsed_body
       expect(json).to include('data', 'meta')
       expect(json['data']).to be_an(Array)
-      expect(json['data'].first).to include(
-        'id' => product.id,
-        'title' => product.title,
-        'short_description' => product.short_description
+      expect(json['data']).to include(
+        a_hash_including(
+          'id' => product.id,
+          'title' => product.title,
+          'short_description' => product.short_description
+        )
       )
+    end
+
+    it 'supports pagination params' do
+      get '/api/v1/products', params: { limit: 5 }
+
+      expect(response.parsed_body['meta']).to include('limit' => 5)
     end
   end
 
