@@ -8,7 +8,8 @@ module Api
       before_action :set_product, only: %i[show update destroy]
 
       def index
-        pagy, products = paginate Product.all
+        sorted_products = Product.all.apply_sort(params[:sort])
+        pagy, products = paginate sorted_products
         render json: {
           data: ProductBlueprint.render_as_hash(products, view: :normal),
           meta: pagy&.data_hash

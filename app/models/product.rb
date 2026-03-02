@@ -1,7 +1,13 @@
 # frozen_string_literal: true
 
 class Product < ApplicationRecord
+  include Sortable
+
+  self.sortable_fields = :title, :stock, :price, :min_players, :max_players, :play_time, :created_at
+  self.default_sort = :title
+
   belongs_to :category
+
   validates :title,
             presence: true,
             length: { minimum: 2, maximum: 80 }

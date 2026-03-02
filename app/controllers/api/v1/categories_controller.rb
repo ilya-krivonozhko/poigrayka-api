@@ -8,7 +8,8 @@ module Api
       before_action :set_category, only: %i[show update destroy]
 
       def index
-        pagy, categories = paginate Category.all
+        sorted_categories = Category.all.apply_sort(params[:sort])
+        pagy, categories = paginate sorted_categories
         render json: {
           data: CategoryBlueprint.render_as_hash(categories),
           meta: pagy&.data_hash
