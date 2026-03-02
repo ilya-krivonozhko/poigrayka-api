@@ -27,6 +27,7 @@ paths:
             type: integer
             minimum: 1
             default: 9
+        - $ref: '#/components/parameters/CategorySort'
       responses:
         '200':
           description: Список объектов
@@ -208,15 +209,7 @@ paths:
           in: query
           schema:
             type: integer
-        - name: sort
-          in: query
-          schema:
-            type: string
-            enum:
-              - price_asc
-              - price_desc
-              - name_asc
-              - name_desc
+        - $ref: '#/components/parameters/ProductSort'
     post:
       summary: Создать product
       tags:
@@ -493,6 +486,30 @@ paths:
         '422':
           description: Validation error
 components:
+  parameters:
+    ProductSort:
+      name: sort
+      in: query
+      description: >
+        Сортировка в формате field:direction.
+        Доступные поля: title, stock, price, min_players,
+        max_players, play_time, created_at.
+        direction: asc или desc.
+      schema:
+        type: string
+        example: price:desc
+
+    CategorySort:
+      name: sort
+      in: query
+      description: >
+        Сортировка в формате field:direction.
+        Доступные поля: title, created_at.
+        direction: asc или desc.
+      schema:
+        type: string
+        example: title:asc
+
   securitySchemes:
     bearerAuth:
       type: http
