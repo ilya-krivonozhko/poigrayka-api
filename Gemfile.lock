@@ -171,7 +171,7 @@ GEM
     nokogiri (1.19.0-x86_64-linux-musl)
       racc (~> 1.4)
     ostruct (0.6.3)
-    overcommit (0.67.1)
+    overcommit (0.68.0)
       childprocess (>= 0.6.3, < 6)
       iniparse (~> 1.4)
       rexml (>= 3.3.9)
@@ -362,7 +362,7 @@ DEPENDENCIES
   brakeman
   debug
   kamal
-  overcommit (~> 0.67.1)
+  overcommit (~> 0.68.0)
   pagy (~> 43.2)
   pg (~> 1.1)
   puma (>= 5.0)

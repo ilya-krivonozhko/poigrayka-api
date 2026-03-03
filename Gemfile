@@ -58,5 +58,5 @@ group :development, :test do
 end
 
 group :development do
-  gem 'overcommit', '~> 0.67.1', require: false
+  gem 'overcommit', '~> 0.68.0', require: false
 end
